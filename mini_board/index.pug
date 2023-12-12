@@ -1,0 +1,23 @@
+extends  layout
+
+block script
+    script
+        include clientIndex.js
+
+block content
+    p ※メッセージは最大１０コマで保管されます。
+
+    form(method="post" action="/")
+        p#id
+        input#id_input(type="hidden" name="id")
+
+        .mb-3
+            lamel.form-label Message
+            input#msg.form-control(type="text" name="msg")
+
+        button.btn.btn-primary(type="submit") 送信
+
+    include  dataItem
+    table.table
+        each item in data
+            +dataItem(item.id, item.msg)
