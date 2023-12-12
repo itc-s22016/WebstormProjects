@@ -1,0 +1,8 @@
+extends layout.pug
+
+block content
+    p #{content}
+    include  dataItem8
+    - let id = 0
+    each value, key in data
+        +dataItem(++id, key, [value])

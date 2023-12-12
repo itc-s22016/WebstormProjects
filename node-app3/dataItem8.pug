@@ -1,0 +1,7 @@
+mixin dataItem(id, key, value)
+    table.table.table-dark
+        tr
+            th #{id}: #{key}
+        each item in value
+            tr
+                td #{item}
